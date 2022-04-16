@@ -1,0 +1,43 @@
+.nav {
+  position: fixed;
+  top: -50%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  clip-path: circle(0.0% at 50% 50%);
+  background-color: white;
+  z-index: -1;
+  transition: clip-path 300ms ease-in-out;
+  backdrop-filter: grayscale(100%);
+  padding: 37rem 2.5rem 0;
+  list-style: none;
+
+  &__heading {
+    color: $black;
+    opacity: .7;
+    font-size: .7rem;
+    letter-spacing: .3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: opacity 300ms ease-in-out,
+                transform 300ms ease-in-out;
+    transition-delay: 400ms;
+    // Just add two more to the number of elements you have. Can't point why, just do it.
+    @include increment-delay (7)
+  }
+
+  &__link {
+    font-weight: bold;
+    color: $base;
+    display: block;
+    padding: 0 0 1rem;
+    margin-block-start: 1.5rem;
+    border-bottom: .1rem solid rgba($base, .7);
+    text-transform: capitalize;
+  }
+}

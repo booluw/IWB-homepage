@@ -1,0 +1,184 @@
+/* Start of mixin*/
+@font-face {
+  src: url("fonts/Raleway.ttf");
+  font-family: Raleway;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Raleway', sans-serif;
+  background-color: #065A8A;
+  color: white;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: transparent;
+  padding: 1.5rem 2rem;
+}
+
+.header__logo {
+  width: 7rem;
+  height: auto;
+}
+
+.hamburger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hamburger__line {
+  padding: .1rem;
+  width: 3rem;
+  background-color: white;
+  border-radius: .2rem;
+  -webkit-margin-after: .5rem;
+          margin-block-end: .5rem;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.hamburger__line:nth-child(odd) {
+  width: 2rem;
+}
+
+.hamburger__toggler {
+  display: none;
+}
+
+.hamburger__toggler:checked ~ .hamburger .hamburger__line {
+  width: 3rem;
+  background-color: #065A8A;
+}
+
+.hamburger__toggler:checked ~ .hamburger .hamburger__line:nth-child(even) {
+  opacity: 0;
+}
+
+.hamburger__toggler:checked ~ .hamburger .hamburger__line:first-child {
+  -webkit-transform: rotate(90deg) translate(1rem, 0);
+          transform: rotate(90deg) translate(1rem, 0);
+}
+
+.hamburger__toggler:checked ~ .hamburger .hamburger__line:last-child {
+  -webkit-transform: translate(0, -0.5rem);
+          transform: translate(0, -0.5rem);
+}
+
+.hamburger__toggler:checked ~ .nav {
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  background-color: white;
+}
+
+.hamburger__toggler:checked ~ .nav .nav__list {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.nav {
+  position: fixed;
+  top: -50%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  background-color: white;
+  z-index: -1;
+  -webkit-transition: -webkit-clip-path 300ms ease-in-out;
+  transition: -webkit-clip-path 300ms ease-in-out;
+  transition: clip-path 300ms ease-in-out;
+  transition: clip-path 300ms ease-in-out, -webkit-clip-path 300ms ease-in-out;
+  -webkit-backdrop-filter: grayscale(100%);
+          backdrop-filter: grayscale(100%);
+  padding: 37rem 2.5rem 0;
+  list-style: none;
+}
+
+.nav__heading {
+  color: black;
+  opacity: .7;
+  font-size: .7rem;
+  letter-spacing: .3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.nav__list {
+  opacity: 0;
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+  -webkit-transition: opacity 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+
+.nav__list:nth-child(2) {
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
+}
+
+.nav__list:nth-child(3) {
+  -webkit-transition-delay: 450ms;
+          transition-delay: 450ms;
+}
+
+.nav__list:nth-child(4) {
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
+}
+
+.nav__list:nth-child(5) {
+  -webkit-transition-delay: 750ms;
+          transition-delay: 750ms;
+}
+
+.nav__list:nth-child(6) {
+  -webkit-transition-delay: 900ms;
+          transition-delay: 900ms;
+}
+
+.nav__link {
+  font-weight: bold;
+  color: #065A8A;
+  display: block;
+  padding: 0 0 1rem;
+  -webkit-margin-before: 1.5rem;
+          margin-block-start: 1.5rem;
+  border-bottom: 0.1rem solid rgba(6, 90, 138, 0.7);
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=styles.css.map */

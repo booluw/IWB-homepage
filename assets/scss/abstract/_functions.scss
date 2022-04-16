@@ -1,0 +1,12 @@
+@function delay-transition($numb, $delay) {
+  // $numb => number of elements
+  // $delay => initial delay
+
+  $result: '';
+
+  @for $_ from 1 through $numb {
+    $result: $delay * 150ms
+  }
+
+  @return $result
+}

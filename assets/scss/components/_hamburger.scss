@@ -1,0 +1,47 @@
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__line {
+    padding: .1rem;
+    width: 3rem;
+    background-color: white;
+    border-radius: .2rem;
+    margin-block-end: .5rem;
+    transition: 300ms ease-in-out;
+
+    &:nth-child(odd) {
+      width: 2rem;
+    }
+  }
+  
+  &__toggler {
+    display: none;
+
+    &:checked {
+      & ~ .hamburger .hamburger__line {
+        width: 3rem;
+        background-color: $base;
+
+        &:nth-child(even) {opacity: 0;}
+        &:first-child {
+          transform: rotate(90deg) translate(1rem, 0);
+        }
+        &:last-child {
+          transform: translate(0, -.5rem);
+        }
+      }
+
+      & ~ .nav {
+        clip-path: circle(50% at 50% 50%);
+        background-color: white;
+      
+        & .nav__list {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
