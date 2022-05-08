@@ -6,11 +6,11 @@
   bottom: 0;
   clip-path: circle(0.0% at 50% 50%);
   background-color: white;
-  z-index: -1;
   transition: clip-path 300ms ease-in-out;
-  backdrop-filter: grayscale(100%);
+  backdrop-filter: blur(10px);
   padding: 37rem 2.5rem 0;
   list-style: none;
+  z-index: 10;
 
   &__heading {
     color: $black;
@@ -40,4 +40,40 @@
     border-bottom: .1rem solid rgba($base, .7);
     text-transform: capitalize;
   }
+}
+
+@media screen and ( min-width: 1200px ) {
+  .nav {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    clip-path: none;
+    transform: translateY(0);
+    background-color: transparent;
+    display: flex;
+    padding: 0;
+
+    &__heading {
+      display: none;
+    }
+
+    &__link {
+      color: white!important;
+      transform: none;
+      padding: 0;
+      background-color: transparent;
+      padding: 1rem 1.5rem;
+
+      &:hover {
+        opacity: .8;  
+      }
+    }
+
+    &__list {
+      opacity: 1;
+      margin-inline-end: 2rem;
+    }
+  }  
 }
