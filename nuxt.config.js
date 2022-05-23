@@ -1,4 +1,7 @@
 export default {
+  server: {
+    host: '0.0.0.0'
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -41,6 +44,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-typeform'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

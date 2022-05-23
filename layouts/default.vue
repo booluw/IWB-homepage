@@ -1,7 +1,10 @@
 <template>
   <section>
     <header class="header">
-      <nuxt-link to="/">
+      <nuxt-link
+        to="/"
+        class="header__logo"
+      >
         <svg
           class="header__logo"
           viewBox="0 0 94 36"
@@ -19,7 +22,7 @@
         </svg>
       </nuxt-link>
       <nav class="header__nav">
-        <input id="hamburger__toggler" type="checkbox" class="hamburger__toggler">
+        <input id="hamburger__toggler" ref="menu" type="checkbox" class="hamburger__toggler">
         <ul class="nav">
           <h3 class="nav__heading">
             useful links
@@ -63,6 +66,16 @@
 
 <script>
 export default {
-  name: 'DefaultView'
+  name: 'DefaultView',
+  watch: {
+    $route () {
+      this.hideMenu()
+    }
+  },
+  methods: {
+    hideMenu () {
+      this.$refs.menu.checked = false
+    }
+  }
 }
 </script>
